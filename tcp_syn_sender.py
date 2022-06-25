@@ -87,5 +87,6 @@ if __name__ == '__main__':
         ip_header(interface_ip_address, server_ip_address) +\
         tcp_header(source_port, server_port_number,
                    interface_ip_address, server_ip_address)
-    s.send(content)
-    print(f'Sent {len(content)}-byte TCP SYN packet on {interface_name}')
+    length = s.send(content)
+    print(f'Sent {length}-byte TCP SYN packet on {interface_name}')
+
